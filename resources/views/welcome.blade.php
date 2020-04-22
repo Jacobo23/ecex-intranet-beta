@@ -81,18 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Ecex intranet
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/entradas">Entradas (ver)</a>
+                    <a href="/entradas/create">Entradas (crear)</a>
+                    <a href="Salidas">Salidas</a>
+                    <a href="Inventario">Inventario</a>
+                    <a href="Reportes">Reportes</a>
+                    <a href="Catalogos">Catalogos</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,31 @@
+.panel-div
+{
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 5px;
+    background-color: white;
+}
+.controlDiv 
+{
+    display: inline-block;
+    padding: 5px;
+    width: 19%;
+}
+.controlDiv label
+{
+    display: block;
+}
+
+.btn-extra
+{
+    width: 200px;
+}
+
+.subT
+{
+    border-bottom: 2px solid rgb(95, 95, 95);
+    padding: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px rgb(32, 32, 32);
+	   -moz-box-shadow: 0 8px 6px -6px rgb(32, 32, 32);
+            box-shadow: 0 8px 6px -6px rgb(32, 32, 32);
+    margin-bottom: 20px;
+}
