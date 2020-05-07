@@ -35,6 +35,7 @@ class CreateIncomeRows extends Migration
             $table->string('skid');
             $table->string('packing_id');
             $table->string('imex');
+            $table->string('observaciones');
             $table->timestamps();
         });
     }

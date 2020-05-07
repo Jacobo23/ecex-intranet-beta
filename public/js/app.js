@@ -49870,6 +49870,9 @@ Vue.component('drop-down-input', __webpack_require__(/*! ./components/DropDown.v
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+//AXIOS
+
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 var app = new Vue({
   el: '#app',

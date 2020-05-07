@@ -82,4 +82,18 @@ class CustomersController extends Controller
     {
         //
     }
+
+    public function getOptions()
+    {
+        $clientes = Customer::all();
+        $resp = array();
+        foreach ($clientes as $cliente) 
+        {
+            $resp[] = (object) [
+                "value" => $cliente->id,
+                "text" => $cliente->nombre
+            ];
+        }
+        return $resp;
+    }
 }

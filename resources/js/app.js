@@ -29,6 +29,9 @@ Vue.component('drop-down-input', require('./components/DropDown.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ //AXIOS
+const axios = require('axios');
+
 const app = new Vue({
     el: '#app',
     data: vars,

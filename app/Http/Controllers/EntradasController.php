@@ -15,6 +15,8 @@ class EntradasController extends Controller
     public function index()
     {
         //
+        $entradas = Entrada::all();
+        return view('entradas.index', ['entradas' => $entradas]);
     }
 
     /**
@@ -35,18 +37,75 @@ class EntradasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $isUpdate = false;
+        if(strlen(request("NumEntrada")) > 8)
+        {
+            //es un update
+            $entrada = Entrada::where('asignacion','=' ,request("NumEntrada"))->first();
+            if($entrada != null)
+            {
+                $isUpdate = true;
+            }
+        }
+        if(!$isUpdate)
+        {
+            $entrada = new Entrada();
+        }
+        
+        $entrada->fecha = request("Fecha");
+        $entrada->customer_id = request("Cliente");
+        $entrada->carrier_id = request("Transportista");
+        $entrada->supplier_id = request("Proveedor");
+        $entrada->referencia = request("Referencia");
+        $entrada->caja = request("Caja");
+        $entrada->sello = request("Sello");
+        $entrada->observaciones = request("Observaciones");
+        $entrada->impoExpo = request("ImpoExpo");
+        $entrada->factura = request("Factura");
+        $entrada->tracking = request("Tracking");
+        $entrada->enviada = false;
+        $entrada->user = "Taylor";
+        $entrada->revisada = request("Revisada");
+        $entrada->cerrada = false;
+        $entrada->po = request("POdef");
+        $entrada->locacion = request("Locaciondef");
+
+        if(!$isUpdate) //is insert
+        {
+            //asignar un numero de Entrada
+            $entrada_anterior = (string)Entrada::max('asignacion');
+            $entrada_anterior_year = "";
+            $current_year = date("Y");
+            $aux_num = 1;
+            if(strlen($entrada_anterior) > 8)
+            {
+                $entrada_anterior_year = substr($entrada_anterior, 0, 4);
+                if($entrada_anterior_year == $current_year)
+                {
+                    $aux_num = ((int)substr($entrada_anterior, 4, 9)) + 1;
+                }
+            }
+            $entrada->asignacion = $current_year . str_pad($aux_num,5,"0",STR_PAD_LEFT);
+            //
+        }
+        
+
+        $entrada->save(); 
+
+        return $entrada->asignacion ." <- Entrada registrda!";     
     }
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Entrada  $entrada
-     * @return \Illuminate\Http\Response
      */
-    public function show(Entrada $entrada)
+    public function show($numero_entrada)
     {
-        //
+        $entrada = Entrada::where('asignacion','=' ,$numero_entrada)->first();
+        if(is_null($entrada))
+        {
+            abort('404','El numero de entrada ' . $numero_entrada . ' no existe!');
+        }
+        return view('entradas.create', ['Entrada' => $entrada]);
     }
 
     /**
@@ -80,6 +139,7 @@ class EntradasController extends Controller
      */
     public function destroy(Entrada $entrada)
     {
-        //
+        $entrada->delete();
+        return "Eliminada!";
     }
 }

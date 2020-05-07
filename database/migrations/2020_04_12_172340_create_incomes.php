@@ -15,7 +15,7 @@ class CreateIncomes extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
-            $table->string('asignacion');
+            $table->Integer('asignacion');
             $table->date('fecha');
             $table->bigInteger('customer_id');
             $table->bigInteger('carrier_id');
@@ -27,6 +27,8 @@ class CreateIncomes extends Migration
             $table->string('impoExpo');
             $table->string('factura');
             $table->string('tracking');
+            $table->string('po');
+            $table->string('locacion');
             $table->boolean('enviada');
             $table->string('user');
             $table->boolean('revisada');

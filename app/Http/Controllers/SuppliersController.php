@@ -86,11 +86,12 @@ class SuppliersController extends Controller
     public function getOptions()
     {
         $suppliers = Supplier::all();
-        $resp = arra();
-        foreach ($suppliers as $supplier) {
+        $resp = array();
+        foreach ($suppliers as $supplier) 
+        {
             $resp[] = (object) [
-                "text" => $supplier['nombre'],
-                "value" => $supplier['id'],
+                "value" => $supplier->id,
+                "text" => $supplier->nombre
             ];
         }
         return $resp;

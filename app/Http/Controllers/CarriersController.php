@@ -82,4 +82,18 @@ class CarriersController extends Controller
     {
         //
     }
+
+    public function getOptions()
+    {
+        $carriers = Carrier::all();
+        $resp = array();
+        foreach ($carriers as $carrier) 
+        {
+            $resp[] = (object) [
+                "value" => $carrier->id,
+                "text" => $carrier->nombre
+            ];
+        }
+        return $resp;
+    }
 }
