@@ -2,12 +2,19 @@
 
 namespace App;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Entrada extends Model
 {
     //
     protected $table = 'incomes';
+
+    public function partidas()
+    {
+        return DB::table('income_rows')->where('income_id', '=', $this->id)->get();
+        //return $this->hasMany(Partida_Entrada::class);
+    }
 
     public function dias()
     {

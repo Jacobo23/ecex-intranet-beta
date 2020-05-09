@@ -19,15 +19,15 @@ class CreatePartNumbers extends Migration
             $table->bigInteger('customer_id');
             $table->string('um');
             $table->decimal('peso_unitario', 8, 2);
-            $table->string('descripcion_ing');
-            $table->string('descripcion_esp');
-            $table->string('pais_de_origen');
-            $table->string('fraccion');
-            $table->string('marca');
-            $table->string('modelo');
-            $table->string('serie');
-            $table->string('imex');
-            $table->string('imagen');
+            $table->string('descripcion_ing')->default("");
+            $table->string('descripcion_esp')->default("");
+            $table->string('pais_de_origen')->default("");
+            $table->string('fraccion')->default("");
+            $table->string('marca')->default("");
+            $table->string('modelo')->default("");
+            $table->string('serie')->default("");
+            $table->string('imex')->default("");
+            $table->string('imagen')->default("");
             $table->timestamps();
         });
     }

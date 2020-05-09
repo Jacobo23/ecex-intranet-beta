@@ -28,7 +28,7 @@ class PartNumberSeeder extends Seeder
             'imagen' => ''
         ]);
         DB::table('part_numbers')->insert([
-            'numero_de_parte' => 'PARTE1',
+            'numero_de_parte' => 'PARTE2',
             'customer_id' => 1,
             'um' => Str::random(10),
             'peso_unitario' => 1.00,
@@ -43,7 +43,7 @@ class PartNumberSeeder extends Seeder
             'imagen' => 'x'
         ]);
         DB::table('part_numbers')->insert([
-            'numero_de_parte' => 'PARTE1',
+            'numero_de_parte' => 'PARTE3',
             'customer_id' => 1,
             'um' => Str::random(10),
             'peso_unitario' => 1.00,
@@ -58,8 +58,8 @@ class PartNumberSeeder extends Seeder
             'imagen' => ''
         ]);
         DB::table('part_numbers')->insert([
-            'numero_de_parte' => 'PARTE1',
-            'customer_id' => 1,
+            'numero_de_parte' => 'PARTE4',
+            'customer_id' => 2,
             'um' => Str::random(10),
             'peso_unitario' => 1.00,
             'descripcion_ing' => Str::random(10),
@@ -73,8 +73,8 @@ class PartNumberSeeder extends Seeder
             'imagen' => ''
         ]);
         DB::table('part_numbers')->insert([
-            'numero_de_parte' => 'PARTE1',
-            'customer_id' => 1,
+            'numero_de_parte' => 'PARTE5',
+            'customer_id' => 2,
             'um' => Str::random(10),
             'peso_unitario' => 1.00,
             'descripcion_ing' => Str::random(10),

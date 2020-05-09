@@ -17,12 +17,12 @@ class CreateOutcomesRows extends Migration
             $table->id();
             $table->bigInteger('outcome_id');
             $table->bigInteger('income_row_id');
-            $table->integer('cantidad_bultos');
-            $table->decimal('cantidad_piezas', 8, 2);
+            $table->integer('cantidad_bultos')->default(0);
+            $table->decimal('cantidad_piezas', 8, 2)->default(0);
             $table->string('umb');
             $table->string('ump');
-            $table->decimal('peso_neto', 8, 2);
-            $table->decimal('peso_bruto', 8, 2);
+            $table->decimal('peso_neto', 8, 2)->default(0);
+            $table->decimal('peso_bruto', 8, 2)->default(0);
             $table->timestamps();
         });
     }

@@ -18,6 +18,12 @@ Route::get('/home', function () {return view('welcome');})->name('home');
 Auth::routes();
 
 Route::resource('/entradas', 'EntradasController')->middleware('auth');
+Route::resource('/partidas', 'Income_rowController');
+Route::resource('/part_numbers', 'PartNumberController');
+Route::get('/part_numbers/{cliente}/{part_number}', 'PartNumberController@getInfo');
+Route::get('/partidas_index/{income_id}/{index}', 'Income_rowController@getByIndex');
+
+
 Route::resource('/customers', 'CustomersController');
 Route::resource('/suppliers', 'SuppliersController');
 Route::resource('/carriers', 'CarriersController');
@@ -26,6 +32,8 @@ Route::resource('/carriers', 'CarriersController');
 Route::get('/get-options-customers', 'CustomersController@getOptions');
 Route::get('/get-options-suppliers', 'SuppliersController@getOptions');
 Route::get('/get-options-carriers', 'CarriersController@getOptions');
+Route::get('/get-options-ump', 'umpController@getOptions');
+Route::get('/get-options-umb', 'umbController@getOptions');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //upload files

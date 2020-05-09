@@ -19,17 +19,17 @@ class CreateOutcomes extends Migration
             $table->date('fecha');
             $table->bigInteger('customer_id');
             $table->bigInteger('carrier_id');
-            $table->string('referencia');
-            $table->string('caja');
-            $table->string('sello');
-            $table->string('observaciones');
-            $table->string('factura');
-            $table->string('pedimento');
-            $table->boolean('enviada');
-            $table->string('user');
-            $table->string('recibido_por');
-            $table->string('placas');
-            $table->string('descontar');
+            $table->string('referencia')->default("");
+            $table->string('caja')->default("");
+            $table->string('sello')->default("");
+            $table->string('observaciones')->default("");
+            $table->string('factura')->default("");
+            $table->string('pedimento')->default("");
+            $table->boolean('enviada')->default(false);
+            $table->string('user')->default("");
+            $table->string('recibido_por')->default("");
+            $table->string('placas')->default("");
+            $table->string('descontar')->default("");
             $table->timestamps();
         });
     }
